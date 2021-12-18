@@ -6,17 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GT_Leads_NET.Models;
+using System.Data.SqlClient;
+using System.Configuration;
+using Microsoft.IdentityModel.Protocols;
 
 namespace GT_Leads_NET
 {
     public class LeadController : Controller
     {
+
         private readonly LeadContext _context;
 
         public LeadController(LeadContext context)
         {
             _context = context;
         }
+
+       
 
         // GET: Lead
         public async Task<IActionResult> Index()
@@ -42,27 +48,35 @@ namespace GT_Leads_NET
             return View(lead);
         }
 
+
         // GET: Lead/Create
         public IActionResult Create()
         {
+            ViewBag.Eventos = _context.Eventos.ToList();
             return View();
         }
 
         // POST: Lead/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nombre,Telefono,Correo,Ciudad")] Lead lead)
+        public async Task<IActionResult> Create([Bind("ID,Nombre,Telefono,Correo,Ciudad,Evento")] Lead lead)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(lead);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(lead);
+           
+            return View();
         }
+
+
 
         // GET: Lead/Edit/5
         public async Task<IActionResult> Edit(int? id)

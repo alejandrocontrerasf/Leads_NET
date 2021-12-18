@@ -1,46 +1,50 @@
 @model GT_Leads_NET.Models.Lead
 
-@{
-    ViewData["Title"] = "Create";
-}
+@{ ViewData["Title"] = "Create"; }
 
-<h1>Create</h1>
+<h1>Crear Nuevo</h1>
 
 <h4>Lead</h4>
 <hr />
-<div class="row">
+<div class="row d-flex justify-content-center">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
-                <input asp-for="Telefono" class="form-control" />
-                <span asp-validation-for="Telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="control-label"></label>
-                <input asp-for="Correo" class="form-control" />
-                <span asp-validation-for="Correo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ciudad" class="control-label"></label>
-                <input asp-for="Ciudad" class="form-control" />
-                <span asp-validation-for="Ciudad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+                <div class="form-group">
+                @Html.DropDownListFor(m => m.Evento, new SelectList(ViewBag.Eventos, "NombreEvento", "NombreEvento"), "Selecccione: el evento", new { @class = "form-control" })
+                <span asp-validation-for="Evento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Correo" class="control-label"></label>
+                    <input asp-for="Correo" class="form-control" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ciudad" class="control-label"></label>
+                    <input asp-for="Ciudad" class="form-control" />
+                    <span asp-validation-for="Ciudad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear Lead" class="btn btn-primary float-right" />
+                </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="d-flex justify-content-end">
+    <a asp-action="Index"> Regresar a la lista</a>
 </div>
 
 @section Scripts {

@@ -1,11 +1,8 @@
 @model GT_Leads_NET.Models.Evento
 
-@{
-    ViewData["Title"] = "Create";
-}
+@{ ViewData["Title"] = "Create"; }
 
-<h1>Create</h1>
-
+<h1>Crear Nuevo</h1>
 <h4>Evento</h4>
 <hr />
 <div class="row">
@@ -33,14 +30,14 @@
                 <span asp-validation-for="Ciudad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar a la lista</a>
 </div>
 
 @section Scripts {

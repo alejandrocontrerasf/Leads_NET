@@ -31,10 +31,10 @@ namespace GT_Leads_NET.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaFin")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("FechaInicio")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("NombreEvento")
                         .IsRequired()
@@ -55,6 +55,10 @@ namespace GT_Leads_NET.Migrations
                     b.Property<string>("Ciudad")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Evento")
+                       .IsRequired()
+                       .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Correo")
                         .IsRequired()

@@ -9,6 +9,9 @@ namespace GT_Leads_NET.Models
 {
     public class LeadContext : DbContext
     {
+        public LeadContext()
+        {
+        }
 
         public LeadContext(DbContextOptions<LeadContext> options) : base(options)
         {
@@ -18,5 +21,8 @@ namespace GT_Leads_NET.Models
         public DbSet<Lead> Leads { get; set; }
         public DbSet<Evento> Eventos { get; set; }
 
+
     }
+
 }
+
