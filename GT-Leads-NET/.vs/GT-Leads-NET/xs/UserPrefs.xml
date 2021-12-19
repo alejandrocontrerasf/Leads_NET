@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{283DBB7B-B9AE-4073-B58A-D2D25202B548}|Default">
   <MonoDevelop.Ide.ItemProperties.GT-Leads-NET PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Lead/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Lead/Create.cshtml">
     <Files>
-      <File FileName="Models/Lead.cs" Line="28" Column="64" />
-      <File FileName="LeadController.cs" Line="56" Column="85" />
-      <File FileName="Views/Lead/Create.cshtml" Line="16" Column="102" />
-      <File FileName="Models/LeadContext.cs" Line="10" Column="29" />
-      <File FileName="Models/Evento.cs" Line="27" Column="1" />
-      <File FileName="Views/Evento/Create.cshtml" Line="33" Column="50" />
-      <File FileName="Views/Lead/Index.cshtml" Line="16" Column="54" />
+      <File FileName="Views/Lead/Create.cshtml" Line="40" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,12 +13,16 @@
               <Node name="Views" expanded="True">
                 <Node name="Evento" expanded="True" />
                 <Node name="Lead" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                  <Node name="Create.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

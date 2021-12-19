@@ -85,7 +85,7 @@ namespace GT_Leads_NET
             {
                 return NotFound();
             }
-
+            ViewBag.Eventos = _context.Eventos.ToList();
             var lead = await _context.Leads.FindAsync(id);
             if (lead == null)
             {
@@ -99,7 +99,7 @@ namespace GT_Leads_NET
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,Telefono,Correo,Ciudad")] Lead lead)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,Telefono,Correo,Ciudad,Evento")] Lead lead)
         {
             if (id != lead.ID)
             {

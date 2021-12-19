@@ -31,10 +31,21 @@
                     <input asp-for="Correo" class="form-control" />
                     <span asp-validation-for="Correo" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="Ciudad" class="control-label"></label>
                     <input asp-for="Ciudad" class="form-control" />
                     <span asp-validation-for="Ciudad" class="text-danger"></span>
+                </div>*@
+
+                <div class="form-group">
+                    <label asp-for="Ciudad" class="control-label"></label>
+                    <select asp-for="Ciudad" class="form-control">
+                        <option selected disabled>-- Ciudad de residencia --</option>
+                        <option>Amazonas</option>
+                        <option>Amazonas</option>
+                        <option>Amazonas</option>
+                    </select>
+                    <span asp-validation-for="Correo" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Crear Lead" class="btn btn-primary float-right" />
